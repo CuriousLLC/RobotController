@@ -9,10 +9,18 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var robot: Robot?
+    @IBOutlet weak var robotIp: UITextField?
+    @IBOutlet weak var robotPort: UITextField?
+    @IBOutlet weak var leftGpio: UITextField?
+    @IBOutlet weak var rightGpio: UITextField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        robot = appDelegate.robot
+        robotIp!.text = robot?.robotIp
+        robotPort!.text = String(robot?.robotPort)
     }
 
     override func didReceiveMemoryWarning() {

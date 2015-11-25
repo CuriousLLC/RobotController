@@ -15,6 +15,12 @@
 		A2D936CD1C054BD40004FECF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2D936CB1C054BD40004FECF /* LaunchScreen.storyboard */; };
 		A2D936D81C054BD40004FECF /* RobotControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D936D71C054BD40004FECF /* RobotControllerTests.swift */; };
 		A2D936E31C054BD40004FECF /* RobotControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D936E21C054BD40004FECF /* RobotControllerUITests.swift */; };
+		A2D936F11C054EAB0004FECF /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D936F01C054EAB0004FECF /* Robot.swift */; };
+		A2D937041C0554AA0004FECF /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D936FF1C0554AA0004FECF /* ysocket.swift */; };
+		A2D937051C0554AA0004FECF /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = A2D937001C0554AA0004FECF /* ytcpsocket.c */; };
+		A2D937061C0554AA0004FECF /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D937011C0554AA0004FECF /* ytcpsocket.swift */; };
+		A2D937071C0554AA0004FECF /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = A2D937021C0554AA0004FECF /* yudpsocket.c */; };
+		A2D937081C0554AA0004FECF /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D937031C0554AA0004FECF /* yudpsocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,13 @@
 		A2D936DE1C054BD40004FECF /* RobotControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RobotControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D936E21C054BD40004FECF /* RobotControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotControllerUITests.swift; sourceTree = "<group>"; };
 		A2D936E41C054BD40004FECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2D936F01C054EAB0004FECF /* Robot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
+		A2D936FE1C0554A90004FECF /* RobotController-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RobotController-Bridging-Header.h"; sourceTree = "<group>"; };
+		A2D936FF1C0554AA0004FECF /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
+		A2D937001C0554AA0004FECF /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
+		A2D937011C0554AA0004FECF /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
+		A2D937021C0554AA0004FECF /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		A2D937031C0554AA0004FECF /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +112,11 @@
 		A2D936BF1C054BD40004FECF /* RobotController */ = {
 			isa = PBXGroup;
 			children = (
+				A2D936FF1C0554AA0004FECF /* ysocket.swift */,
+				A2D937001C0554AA0004FECF /* ytcpsocket.c */,
+				A2D937011C0554AA0004FECF /* ytcpsocket.swift */,
+				A2D937021C0554AA0004FECF /* yudpsocket.c */,
+				A2D937031C0554AA0004FECF /* yudpsocket.swift */,
 				A2D936C01C054BD40004FECF /* AppDelegate.swift */,
 				A2D936C21C054BD40004FECF /* FirstViewController.swift */,
 				A2D936C41C054BD40004FECF /* SecondViewController.swift */,
@@ -106,6 +124,8 @@
 				A2D936C91C054BD40004FECF /* Assets.xcassets */,
 				A2D936CB1C054BD40004FECF /* LaunchScreen.storyboard */,
 				A2D936CE1C054BD40004FECF /* Info.plist */,
+				A2D936F01C054EAB0004FECF /* Robot.swift */,
+				A2D936FE1C0554A90004FECF /* RobotController-Bridging-Header.h */,
 			);
 			path = RobotController;
 			sourceTree = "<group>";
@@ -262,8 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D937071C0554AA0004FECF /* yudpsocket.c in Sources */,
 				A2D936C51C054BD40004FECF /* SecondViewController.swift in Sources */,
 				A2D936C11C054BD40004FECF /* AppDelegate.swift in Sources */,
+				A2D936F11C054EAB0004FECF /* Robot.swift in Sources */,
+				A2D937041C0554AA0004FECF /* ysocket.swift in Sources */,
+				A2D937051C0554AA0004FECF /* ytcpsocket.c in Sources */,
+				A2D937081C0554AA0004FECF /* yudpsocket.swift in Sources */,
+				A2D937061C0554AA0004FECF /* ytcpsocket.swift in Sources */,
 				A2D936C31C054BD40004FECF /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -394,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -406,10 +432,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RobotController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Curious.RobotController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RobotController/RobotController-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -417,10 +448,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RobotController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Curious.RobotController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RobotController/RobotController-Bridging-Header.h";
 			};
 			name = Release;
 		};
