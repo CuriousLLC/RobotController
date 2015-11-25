@@ -40,27 +40,17 @@ import Foundation
 public class UDPClient: YSocket {
     public override init(addr a:String,port p:Int){
         super.init()
-        let remoteipbuff:[Int8] = [Int8](count:16,repeatedValue:0x0)
-        /*let ret=-1 //c_yudpsocket_get_server_ip(a, ip: remoteipbuff)
-        if ret==0{
-            if let ip=String(CString: remoteipbuff, encoding: NSUTF8StringEncoding){
-                self.addr=ip
-                self.port=p
-                let fd:Int32=c_yudpsocket_client()
-                if fd>0{
-                    self.fd=fd
-                }
+
+        // Don't bother calling gethostbyname, we will always be dealing with
+        // an IP here.
+        if let ip=String(CString: a, encoding: NSUTF8StringEncoding){
+            self.addr=ip
+            self.port=p
+            let fd:Int32=c_yudpsocket_client()
+            if fd>0{
+                self.fd=fd
             }
-        } else {*/
-            if let ip=String(CString: a, encoding: NSUTF8StringEncoding){
-                self.addr=ip
-                self.port=p
-                let fd:Int32=c_yudpsocket_client()
-                if fd>0{
-                    self.fd=fd
-                }
-            }
-        //}
+        }
     }
     /*
     * send data
