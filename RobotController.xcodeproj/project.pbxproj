@@ -21,6 +21,7 @@
 		A2D937061C0554AA0004FECF /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D937011C0554AA0004FECF /* ytcpsocket.swift */; };
 		A2D937071C0554AA0004FECF /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = A2D937021C0554AA0004FECF /* yudpsocket.c */; };
 		A2D937081C0554AA0004FECF /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D937031C0554AA0004FECF /* yudpsocket.swift */; };
+		A2D9370A1C072F460004FECF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D937091C072F460004FECF /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		A2D937011C0554AA0004FECF /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytcpsocket.swift; sourceTree = "<group>"; };
 		A2D937021C0554AA0004FECF /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
 		A2D937031C0554AA0004FECF /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
+		A2D937091C072F460004FECF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				A2D936CE1C054BD40004FECF /* Info.plist */,
 				A2D936F01C054EAB0004FECF /* Robot.swift */,
 				A2D936FE1C0554A90004FECF /* RobotController-Bridging-Header.h */,
+				A2D937091C072F460004FECF /* Message.swift */,
 			);
 			path = RobotController;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				A2D937041C0554AA0004FECF /* ysocket.swift in Sources */,
 				A2D937051C0554AA0004FECF /* ytcpsocket.c in Sources */,
 				A2D937081C0554AA0004FECF /* yudpsocket.swift in Sources */,
+				A2D9370A1C072F460004FECF /* Message.swift in Sources */,
 				A2D937061C0554AA0004FECF /* ytcpsocket.swift in Sources */,
 				A2D936C31C054BD40004FECF /* FirstViewController.swift in Sources */,
 			);

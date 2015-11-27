@@ -21,11 +21,25 @@ class RobotControllerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testAddServoMessage() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let msg = AddServoMessage(gpio: 12, servoType: 1)
+        
+        XCTAssert(msg.serialize() == [0xf0, 0x02, 0x01, 0x0c, 0xf1])
+        
+        msg.setInverse()
+        XCTAssert(msg.serialize() == [0xf0, 0x02, 0x81, 0x0c, 0xf1])
     }
-    
+
+    func testRotateServoMessage() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let msg = RotateServoTypeMessage(mask: 0x01, pulseWidth: 2000)
+
+        XCTAssert(msg.serialize() == [0xf0, 0x04, 0x01, 0x07, 0xd0, 0xf1])
+    }
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {
