@@ -9,8 +9,8 @@
 import Foundation
 
 class Robot {
-    var leftServo = 20;
-    var rightServo = 23;
+    var leftServo: UInt8 = 20;
+    var rightServo: UInt8 = 23;
     let client: UDPClient = UDPClient(addr: "", port: 0);
 
     var robotIp: String {
@@ -43,5 +43,14 @@ class Robot {
 
     func send_datagram(data:[UInt8]) {
         client.send(data: data)
+    }
+    
+    func send_config() {
+        let msg = AddServoMessage(gpio: leftServo, servoType: 1)
+        send_datagram(msg.serialize())
+        
+        msg._gpio = rightServo
+        msg.setInverse()
+        send_datagram(msg.serialize())
     }
 }

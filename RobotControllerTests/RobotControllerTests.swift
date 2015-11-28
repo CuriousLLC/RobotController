@@ -22,22 +22,36 @@ class RobotControllerTests: XCTestCase {
     }
     
     func testAddServoMessage() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let msg = AddServoMessage(gpio: 12, servoType: 1)
+        let msg = AddServoMessage(gpio: 23, servoType: 1)
         
-        XCTAssert(msg.serialize() == [0xf0, 0x02, 0x01, 0x0c, 0xf1])
+        XCTAssert(msg.serialize() == [0xf0, 0x03, 0x01, 0x01, 0x17, 0xf1])
         
         msg.setInverse()
-        XCTAssert(msg.serialize() == [0xf0, 0x02, 0x81, 0x0c, 0xf1])
+        XCTAssert(msg.serialize() == [0xf0, 0x03, 0x01, 0x81, 0x17, 0xf1])
+    }
+
+    func testRotateServoTypeMessage() {
+        let msg = RotateServoTypeMessage(mask: 0x01, pulseWidth: 2000)
+
+        XCTAssert(msg.serialize() == [0xf0, 0x04, 0x02, 0x01, 0x07, 0xd0, 0xf1])
     }
 
     func testRotateServoMessage() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let msg = RotateServoTypeMessage(mask: 0x01, pulseWidth: 2000)
+        let msg = RotateServoMessage(gpio: 20, pulseWidth: 2000)
+        
+        Swift.print(msg.serialize())
+        XCTAssert(msg.serialize() == [0xf0, 0x04, 0x03, 0x14, 0x07, 0xd0, 0xf1])
+    }
+    
+    func testSendConfig() {
+        let robot: Robot?
 
-        XCTAssert(msg.serialize() == [0xf0, 0x04, 0x01, 0x07, 0xd0, 0xf1])
+        robot = Robot()
+        robot?.robotIp = "1.2.3.4"
+        robot?.robotPort = Int(1234)
+        robot?.leftServo = UInt8(20)
+        robot?.rightServo = UInt8(10)
+        robot?.send_config()
     }
 
     func testPerformanceExample() {

@@ -22,8 +22,8 @@ class Message {
 }
 
 class AddServoMessage : Message {
-    let mesageType:UInt8 = 1
-    let size:UInt8 = 2
+    let messageType:UInt8 = 1
+    let size:UInt8 = 3
     var _servoType: UInt8
     var _gpio: UInt8
 
@@ -37,12 +37,12 @@ class AddServoMessage : Message {
     }
 
     override func serialize() -> [UInt8]{
-        return [SOM, size, _servoType, _gpio, EOM]
+        return [SOM, size, messageType, _servoType, _gpio, EOM]
     }
 }
 
 class RotateServoTypeMessage : Message {
-    let mesageType:UInt8 = 2
+    let messageType:UInt8 = 2
     let size:UInt8 = 4
     var _mask: UInt8
     var _pulseWidth: UInt16
@@ -53,22 +53,22 @@ class RotateServoTypeMessage : Message {
     }
     
     override func serialize() -> [UInt8]{
-        return [SOM, size, _mask, UInt8(_pulseWidth >> 8), UInt8(_pulseWidth & 0xff), EOM]
+        return [SOM, size, messageType, _mask, UInt8(_pulseWidth >> 8), UInt8(_pulseWidth & 0xff), EOM]
     }
 }
 
 class RotateServoMessage : Message {
-    let mesageType:UInt8 = 3
+    let messageType:UInt8 = 3
     let size:UInt8 = 4
-    var gpio: UInt8
-    var pulseWidth: UInt16
+    var _gpio: UInt8
+    var _pulseWidth: UInt16
     
-    init(_gpio: UInt8, _pulseWidth: UInt16) {
-        gpio = _gpio
-        pulseWidth = _pulseWidth
+    init(gpio: UInt8, pulseWidth: UInt16) {
+        _gpio = gpio
+        _pulseWidth = pulseWidth
     }
     
     override func serialize() -> [UInt8]{
-        return [SOM, size, gpio, UInt8(pulseWidth >> 8), UInt8(pulseWidth), EOM]
+        return [SOM, size, messageType, _gpio, UInt8(_pulseWidth >> 8), UInt8(_pulseWidth & 0xff), EOM]
     }
 }
