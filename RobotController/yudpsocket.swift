@@ -60,6 +60,8 @@ public class UDPClient: YSocket {
         if let fd:Int32=self.fd{
             let sendsize:Int32=c_yudpsocket_sentto(fd, buff: d, len: Int32(d.count), ip: self.addr,port: Int32(self.port))
             if Int(sendsize)==d.count{
+                //let hex = d.map({ (ch: UInt8) -> String in String(ch, radix: 16) })
+                //Swift.print(hex)
                 return (true,"send success")
             }else{
                 return (false,"send error")

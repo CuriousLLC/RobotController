@@ -50,10 +50,6 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         robot = appDelegate.robot
-        Swift.print("Sending config datagrams")
-        //robot?.send_datagram([0xf0, 0x03, 0x01, 0x81, 0x17, 0xf1])
-        //robot?.send_datagram([0xf0, 0x03, 0x01, 0x01, 0x14, 0xf1])
-        Swift.print("Done sending config")
     }
 
     override func didReceiveMemoryWarning() {

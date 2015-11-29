@@ -72,3 +72,12 @@ class RotateServoMessage : Message {
         return [SOM, size, messageType, _gpio, UInt8(_pulseWidth >> 8), UInt8(_pulseWidth & 0xff), EOM]
     }
 }
+
+class ClearServosMessage : Message {
+    let messageType:UInt8 = 6
+    let size:UInt8 = 1
+
+    override func serialize() -> [UInt8]{
+        return [SOM, size, messageType, EOM]
+    }
+}
